@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #F6F5F1;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #EEEDE7;
+  --color-text-primary: #20211F;
+  --color-text-secondary: #686A64;
+  --color-text-muted: #85867F;
+  --color-border: #DCDCD4;
+  --color-divider: #E8E7E0;
+  --color-accent: #C85B38;
+  --color-accent-hover: #A9472B;
+  --color-accent-subtle: #F6E8E1;
+
+  --color-compat-pass: #2F6B50;
+  --color-compat-fail: #B34335;
+  --color-compat-uncertain: #946A28;
+  --color-compat-neutral: #656B73;
+
+  --font-editorial: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #DCDCD4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #85867F;
+}
+

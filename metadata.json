@@ -1,0 +1,6 @@
+{
+  "name": "GameFit",
+  "description": "Discover games, check device compatibility, and find playable alternatives tailored to your hardware.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

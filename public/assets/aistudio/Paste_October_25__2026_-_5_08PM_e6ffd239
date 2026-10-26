@@ -1,0 +1,999 @@
+GAMEFIT — MASTER UI/UX DESIGN AND INTERACTION SPECIFICATION
+
+Act as an experienced digital product designer, art director, UX researcher, and senior frontend engineer. Design and implement GameFit as a distinctive, production-quality game discovery and hardware compatibility platform.
+
+The website must look like it was designed by a thoughtful human design team, with deliberate decisions about hierarchy, spacing, typography, content density, imagery, and interaction. It must not resemble a generic AI-generated landing page, a default SaaS template, or a collection of prebuilt component-library examples.
+
+Do not merely describe the design. Implement it in the actual project.
+
+1. PRODUCT IDENTITY
+
+Product: GameFit
+
+Purpose: Help gamers discover games matching their interests, check whether games are suitable for their PC or mobile device, and find similar alternatives that fit their hardware.
+
+Primary users: PC and mobile gamers worldwide, including users with entry-level and midrange devices.
+
+Primary user journey:
+
+Discover a game → inspect its details → check device compatibility → find suitable alternatives.
+
+Secondary journey:
+
+Describe a desired gaming experience → refine the results using filters → compare games → open a selected title.
+
+The design must support real content and useful tools. Avoid treating the website as a promotional landing page with a compatibility calculator added as an afterthought.
+
+2. ART DIRECTION
+
+Create a premium, editorial gaming aesthetic with a strong sense of restraint.
+
+The interface should combine:
+
+- The visual storytelling of a carefully art-directed gaming publication.
+- The precision of a hardware comparison tool.
+- The usability of a mature search product.
+- The clarity of a well-designed editorial website.
+
+GameFit should feel independent and recognizable. Do not copy any particular brand's website.
+
+The desired feeling
+
+- Intelligent.
+- Immersive.
+- Technically credible.
+- Calm and confident.
+- Content-focused.
+- Premium without looking expensive for its own sake.
+
+Avoid the visual habits of generic AI-generated websites
+
+Do not use:
+
+- Purple-and-black gradients.
+- Glowing gradient orbs.
+- Neon outlines around every card.
+- Glassmorphism or liquid-glass panels.
+- Dot-grid backgrounds.
+- Floating decorative UI panels.
+- Excessive pill-shaped containers.
+- Identical three-column feature-card sections repeated down the page.
+- Oversized empty hero sections with a tiny amount of content.
+- Randomly scattered statistics.
+- Fake activity counters or fake user counts.
+- Fake reviews, testimonials, badges, or trust indicators.
+- Decorative graphs that communicate no information.
+- Emoji as interface icons.
+- Random floating game icons.
+- Excessive blur, shadows, and glow.
+- Scroll-triggered animations on every section.
+- Fake terminal windows or code snippets used as decoration.
+- Generic AI-generated game descriptions presented as verified facts.
+- Buttons that exist only to make a section look interactive.
+
+Every visible element must have a clear purpose.
+
+3. COLOR SYSTEM
+
+Use a restrained palette built around warm off-white, ink-black typography, muted neutral borders, and one distinctive burnt-orange accent.
+
+Define reusable CSS variables rather than applying arbitrary colors throughout the project.
+
+Core colors
+
+- Main page background: "#F6F5F1"
+- Primary content surface: "#FFFFFF"
+- Alternate section background: "#EEEDE7"
+- Primary text: "#20211F"
+- Secondary text: "#686A64"
+- Muted text: "#85867F"
+- Primary border: "#DCDCD4"
+- Subtle divider: "#E8E7E0"
+- Primary accent: "#C85B38"
+- Accent hover: "#A9472B"
+- Accent subtle background: "#F6E8E1"
+
+Compatibility colors
+
+- Compatible or meets known minimum requirements: "#2F6B50"
+- Below known minimum requirements: "#B34335"
+- Uncertain or incomplete data: "#946A28"
+- Neutral information: "#656B73"
+
+Do not rely on color alone. Every compatibility state must also have a text label and, where appropriate, a clear icon.
+
+Color usage rules
+
+- Use the main background for most pages.
+- Use pure white for actual content surfaces such as search fields, result panels, and selected cards.
+- Use burnt orange sparingly for the main action, selected navigation state, focus accents, and important links.
+- Do not make every link, badge, heading, or icon orange.
+- Use green, red, and amber only for relevant compatibility information.
+- Keep borders visible but understated.
+- Do not use gradients unless a specific piece of artwork already contains one.
+- Maintain readable contrast across all text sizes.
+
+The result should look warm, composed, and editorial rather than sterile or overly futuristic.
+
+4. TYPOGRAPHY
+
+Typography must create the visual identity.
+
+Use a readable, mature font pairing:
+
+- A restrained editorial serif for selected display headlines.
+- A clean sans-serif for navigation, descriptions, search, data, filters, and technical information.
+
+Suggested pairing: Newsreader for selected editorial headings and IBM Plex Sans for interface typography, provided the font files or authorized font-loading method are available. If external font loading is unavailable, use appropriate system fallbacks.
+
+Do not use Inter, Geist, or Space Grotesk.
+
+Typography rules
+
+- Main homepage headline: approximately 54–68 px on large desktops.
+- Section headings: approximately 28–36 px.
+- Page titles: approximately 38–52 px, depending on the page.
+- Game titles on cards: approximately 15–18 px.
+- Body copy: approximately 14–16 px.
+- Metadata and labels: approximately 11–13 px.
+- Technical values: approximately 13–15 px.
+
+Use responsive typography with "clamp()" where appropriate.
+
+Keep body copy readable. Avoid extremely light font weights, excessive uppercase text, letter spacing on paragraphs, and unnecessarily tiny labels.
+
+Use uppercase labels selectively for short metadata such as platform, genre category, and section identifiers.
+
+Do not use a different font size for every individual component. Establish a consistent type scale.
+
+5. SPACING, GRID, AND SHAPE LANGUAGE
+
+Use a consistent spacing system based on multiples of 4 px.
+
+Suggested spacing tokens:
+
+- 4 px: tight internal alignment.
+- 8 px: compact spacing.
+- 12 px: small component gaps.
+- 16 px: standard component spacing.
+- 24 px: section-internal spacing.
+- 32 px: major component spacing.
+- 48 px: section spacing on compact layouts.
+- 64–88 px: desktop section spacing.
+
+Desktop layout
+
+- Maximum content width: approximately 1320 px.
+- Main content horizontal padding: 40–56 px, depending on viewport.
+- Standard grid gap: 20–24 px.
+- Header height: approximately 68–76 px.
+- Keep text line lengths controlled.
+- Align major headings, content edges, and grid boundaries consistently.
+
+Mobile layout
+
+- Horizontal page padding: 18–22 px.
+- Header height: approximately 60–66 px.
+- Grid gap: 12–16 px.
+- Section spacing: approximately 40–56 px.
+- Avoid horizontal overflow.
+- Use stacked layouts where columns would make text or technical comparisons too cramped.
+
+Shape language
+
+- Inputs: approximately 8–10 px corner radius.
+- Standard buttons: approximately 7–9 px corner radius.
+- Cards: approximately 8–12 px corner radius.
+- Large content panels: approximately 10–12 px corner radius.
+- Small status indicators: compact rectangles or restrained rounded labels.
+
+Avoid making every element a large rounded pill. Use straight edges and subtle borders where they improve structure.
+
+Shadows should be rare. Prefer spacing, background contrast, and borders to separate elements.
+
+6. GLOBAL HEADER
+
+Create a compact, carefully aligned header.
+
+Desktop structure
+
+Use a single horizontal row:
+
+Left: GameFit wordmark.
+
+Center-left: Primary navigation:
+
+- Discover
+- Games
+- Compatibility
+
+Right: Search icon or compact search trigger, followed by any necessary secondary action.
+
+The wordmark should be typographic and distinctive. Avoid generic game-controller symbols or random gaming mascots.
+
+Use a text-based wordmark with a small, restrained geometric detail only if it contributes to the identity.
+
+Header behavior
+
+- Use a thin bottom border.
+- Keep the header visually quiet.
+- Avoid a large floating header card.
+- Keep the header sticky only if it remains useful during browsing.
+- If sticky, apply a solid background and a subtle divider instead of a dramatic blur effect.
+- Use a compact active-navigation indicator.
+- Keep hover effects limited to color and a small underline or background change.
+
+Mobile header
+
+Show:
+
+- Wordmark on the left.
+- Search action and menu button on the right.
+
+The menu must open a real navigation panel. It must close when a destination is selected, the close button is pressed, or the user presses Escape.
+
+Prevent the open menu from causing horizontal overflow.
+
+7. HOMEPAGE LAYOUT
+
+Build the homepage as a sequence of editorially composed sections, not a repetitive grid of marketing cards.
+
+Section A: Hero
+
+Position this immediately below the header.
+
+Desktop:
+
+- Use a two-column composition.
+- Left column approximately 48–52% of the content width.
+- Right column approximately 48–52%.
+- Vertically center the headline and supporting content without creating excessive empty space.
+- Keep the entire hero visible as a coherent composition at common laptop widths.
+
+Left column:
+
+1. Small introductory label: "GAME DISCOVERY / HARDWARE FIT"
+2. Large editorial headline.
+3. Short supporting paragraph.
+4. Search field.
+5. Two secondary actions.
+
+Use this headline:
+
+Find your next game. Know your hardware.
+
+Supporting text:
+
+"Explore games that match your taste, check their requirements against your device, and discover alternatives worth playing."
+
+Search placeholder:
+
+"Search a game or describe what you want to play..."
+
+Primary button: "Explore games"
+
+Secondary button: "Check compatibility"
+
+Right column:
+
+- Feature one large, permitted game artwork image from the actual catalog.
+- Use a restrained, asymmetric crop.
+- Place the game's title and platform as a small editorial caption below or alongside the artwork.
+- Do not put the artwork inside multiple nested cards.
+- Do not overlay excessive text or decorative UI on top of the image.
+
+The artwork should feel selected by an editor rather than randomly generated.
+
+If no licensed artwork is available, use a neutral, intentional visual treatment. Never use a broken image or an unlicensed image.
+
+Mobile:
+
+- Headline first.
+- Supporting text second.
+- Search third.
+- Actions below the search.
+- Featured artwork below the primary actions.
+- Avoid a hero that occupies the entire initial screen before the user can access search.
+
+Section B: Continue exploring
+
+Introduce a compact section with a clear title, such as:
+
+Worth a closer look
+
+Display a curated row or grid of selected games from the local catalog.
+
+Each item should contain:
+
+- Artwork.
+- Game title.
+- One or two concise metadata fields.
+- Platform information when available.
+
+Use three or four columns on larger desktop screens and two columns on most mobile screens.
+
+Do not use fake ratings, fake player counts, invented review scores, or generic descriptions.
+
+The entire game card should open the correct detail page. Keep any secondary actions separately accessible.
+
+Section C: Discover by experience
+
+Create a visually distinct browsing section focused on how people actually choose games.
+
+Use editorial links or compact image-led tiles for categories such as:
+
+- Open-world exploration.
+- Story-driven adventures.
+- Tactical combat.
+- Survival and crafting.
+- Relaxing games.
+- Racing and simulation.
+
+Only show categories supported by actual catalog metadata.
+
+Avoid repeating the same rounded-card layout used in the previous section. Consider a horizontal editorial list, a compact multi-column index, or a mixed image-and-text composition.
+
+Clicking a category must apply the corresponding catalog filter.
+
+Section D: Hardware compatibility feature
+
+Use a slightly darker neutral section background, not a black neon panel.
+
+Headline:
+
+A great game should fit your setup.
+
+Supporting copy:
+
+"Compare your hardware with published requirements and understand where your system matches, falls short, or needs further checking."
+
+Include a simple functional preview of the compatibility workflow:
+
+- Select a game.
+- Enter or select device specifications.
+- View the result.
+
+This must be an actual working interaction or a clearly labeled, non-interactive illustration. Prefer the working interaction.
+
+Do not show a fake FPS number or an invented benchmark.
+
+CTA: "Check your PC"
+
+Section E: Find an alternative
+
+Headline:
+
+Love the idea. Need a lighter game?
+
+Supporting text:
+
+"Start with a game you like and discover similar experiences that better match your device."
+
+Use one featured source game and two or three alternatives from the actual catalog. Explain each recommendation with a short, evidence-based reason.
+
+The alternatives must be selected using real metadata and compatibility comparisons. Do not hardcode unrelated games simply to complete the visual design.
+
+CTA: "Find alternatives"
+
+Section F: Final discovery entry
+
+End the main content with a compact editorial search section rather than a large generic call-to-action banner.
+
+Headline:
+
+What do you feel like playing?
+
+Search field with the same behavior as the homepage search.
+
+The search implementation must be shared so the homepage and catalog do not have inconsistent search logic.
+
+Section G: Footer
+
+Use a thin top divider and restrained typography.
+
+Include:
+
+- GameFit wordmark.
+- Short product description.
+- Discover, Games, Compatibility, About, Sources, Privacy, and Terms links.
+- A small data accuracy disclaimer.
+
+Do not invent a copyright date, legal company name, or company address.
+
+8. GAME CATALOG PAGE
+
+The catalog should be a serious browsing tool, not simply a collection of artwork cards.
+
+Page header
+
+At the top of "/games", display:
+
+- Breadcrumb or page context.
+- Title: "Explore games"
+- One-line explanation.
+- Search input.
+- Result count based on the actual filtered dataset.
+
+Keep the header compact so users can reach the results quickly.
+
+Desktop layout
+
+Use a two-column structure:
+
+- Left sidebar: approximately 230–260 px.
+- Right results area: remaining width.
+
+The sidebar contains filters.
+
+The results area contains:
+
+1. Search and sort controls.
+2. Active-filter chips.
+3. Result count.
+4. Game grid.
+5. Pagination or incremental loading.
+
+Align the sidebar and results area at the top.
+
+Keep the sidebar sticky only if its height and viewport make that useful. Never allow it to cover the footer or obscure results.
+
+Mobile layout
+
+Replace the permanent sidebar with a "Filters" button.
+
+Opening filters should display an accessible drawer or modal with:
+
+- Filter groups.
+- Selected filter counts.
+- "Apply filters".
+- "Reset all".
+
+Display active filter chips above the results.
+
+The drawer must support keyboard navigation, Escape to close, and correct focus behavior.
+
+Game grid
+
+- Four columns at wide desktop widths where content fits.
+- Three columns on medium desktop widths.
+- Two columns on mobile.
+- One column only when the available width makes two columns impractical.
+
+Each game card contains:
+
+- Artwork in a consistent image ratio.
+- Title.
+- Release year, if available.
+- One or two relevant tags.
+- Platform availability.
+- A compact compatibility indicator only when the user's device and sufficient compatibility data are available.
+
+Do not stretch images. Use appropriate image cropping without distorting artwork.
+
+Keep the text hierarchy consistent. Avoid excessive metadata and rows of decorative badges.
+
+Sorting
+
+Provide working options:
+
+- Relevance.
+- Title A–Z.
+- Newest release, when release dates are available.
+
+Do not include ratings, popularity, or review sorting until reliable data for those fields exists.
+
+Pagination
+
+Use either pagination or incremental loading. Choose one consistent approach.
+
+When filters change, return to the first result page.
+
+Preserve the current filters when opening a game and returning to the catalog where practical.
+
+9. SEARCH SYSTEM: FULL SPECIFICATION
+
+Search is one of GameFit's primary product features. Build a shared search engine used by the homepage, catalog, and discovery page.
+
+Do not implement a fake search box that only redirects to a generic page.
+
+Search input behavior
+
+When the user focuses the search field:
+
+- Show a clear focus state.
+- Display a dropdown with relevant suggestions when a query is present.
+- Allow keyboard navigation through suggestions.
+- Highlight the matching part of a title where practical.
+- Support Enter to submit.
+- Support Escape to close the dropdown.
+- Provide a visible clear button when the field contains text.
+
+Use a short debounce for asynchronous searches, approximately 200–300 ms. Do not add artificial loading delays to local searches.
+
+Search categories
+
+Support two distinct modes.
+
+Mode 1: Game title search
+
+Examples:
+
+- "Red Dead Redemption 2"
+- "Elden Ring"
+- "Hollow Knight"
+
+Search the game title, known aliases, developer or publisher when available, and relevant tags.
+
+Rank exact title matches above partial matches, with relevant aliases and metadata matches following them.
+
+Mode 2: Natural-language discovery
+
+Examples:
+
+- "Open-world games with sword combat."
+- "Games like Ghost of Tsushima for a low-end PC."
+- "Story-rich games with exploration."
+- "Android games similar to my favorite action game."
+
+For the initial implementation, use a structured rule-based parser and metadata matching. Do not require a paid language-model API.
+
+Extract supported preferences such as:
+
+- Platform.
+- Genre.
+- Gameplay mechanics.
+- World type.
+- Story emphasis.
+- Atmosphere.
+- Similarity to a named game.
+- Hardware constraints, when supplied.
+
+Do not interpret every word as a filter. Only activate recognized preferences and allow the user to refine them.
+
+When a phrase is not understood, fall back to title search and show a useful message. Never fabricate results.
+
+Search ranking
+
+Implement a deterministic ranking model with sensible priorities:
+
+1. Exact title match.
+2. Title prefix match.
+3. Title or alias partial match.
+4. Relevant genre and gameplay metadata.
+5. Match with the user's requested platform.
+6. Match with other recognized preferences.
+
+When the user requests compatible games, apply the available compatibility information as a distinct ranking or filtering step. Do not confuse popularity or similarity with actual compatibility.
+
+Use one shared ranking function across search interfaces.
+
+Search results
+
+Display:
+
+- Game artwork where available.
+- Title.
+- Platform.
+- One relevant genre or gameplay label.
+- A concise reason for a natural-language match when supported by the data.
+
+Show a maximum of approximately five to eight suggestions in the autocomplete dropdown. Link to the full results page for more.
+
+For zero results, display:
+
+"No matching games found."
+
+Then suggest removing a filter, trying a shorter title, or exploring related categories.
+
+Do not invent similar results simply to avoid an empty state.
+
+Search URL behavior
+
+Use a shareable search URL with query parameters, for example:
+
+"/games?q=open-world&platform=pc&genre=action"
+
+Keep search queries and supported filters in the URL when appropriate. Restoring a URL should restore the visible search state.
+
+Use URL encoding correctly. Do not construct unsafe HTML from user-provided search strings.
+
+10. FILTER SYSTEM
+
+Filters must work against actual normalized metadata and be composable.
+
+Platform
+
+Options:
+
+- PC
+- Android
+- iOS
+
+Use multi-select if the interface allows users to browse across platforms.
+
+Platform availability must be supported by the data.
+
+Genre
+
+Use categories present in the catalog, such as:
+
+- Action
+- Adventure
+- RPG
+- Strategy
+- Shooter
+- Simulation
+- Racing
+- Puzzle
+- Platformer
+- Survival
+- Sports
+
+Do not show empty categories as though the catalog contains games for them.
+
+Gameplay
+
+Possible tags:
+
+- Open world.
+- Exploration.
+- Stealth.
+- Melee combat.
+- Shooting.
+- Crafting.
+- Survival.
+- Turn-based combat.
+- Real-time strategy.
+- Platforming.
+- Co-op, when verified.
+
+Only display tags represented by actual data.
+
+Story and atmosphere
+
+Support filters where the metadata is available:
+
+- Story-driven.
+- Atmospheric.
+- Relaxing.
+- Challenging.
+- Horror.
+- Fantasy.
+- Science fiction.
+- Historical.
+- Realistic.
+- Stylized.
+
+Keep these tags distinct from formal genres where possible.
+
+Release period
+
+Offer practical options such as:
+
+- Any year.
+- Last five years.
+- Last ten years.
+- Older games.
+
+Use actual release dates. Handle unknown dates separately.
+
+Hardware suitability
+
+Show hardware-specific filters only when enough information is available.
+
+Possible options:
+
+- Meets known minimum PC requirements.
+- Below known minimum requirements.
+- Compatibility unknown.
+
+Do not show hardware-specific filters before the user provides or selects a device profile.
+
+Never treat missing requirement data as proof that a game is compatible.
+
+Filter combination logic
+
+- Different filter groups use AND logic.
+- Multiple selections within a single group use OR logic by default.
+- Example: PC AND Action AND (Open World OR Exploration).
+- Search text and selected filters must combine consistently.
+- The result count must update to reflect the current result set.
+- Removing a chip removes only the corresponding filter.
+- "Reset all" clears every active filter and restores the default sort.
+- When no results remain, show which filters are active and provide an obvious reset option.
+
+Filter presentation
+
+Use compact, readable groups with clear labels.
+
+On desktop:
+
+- Use collapsible groups only where they meaningfully reduce sidebar length.
+- Keep important filters visible.
+- Use checkboxes for multi-select categories.
+- Use radio options or a select control for mutually exclusive choices.
+
+On mobile:
+
+- Keep the filter drawer organized into clearly separated sections.
+- Display selected counts.
+- Provide persistent Apply and Reset controls when the drawer content requires scrolling.
+
+Do not use a horizontal row of dozens of tiny pill buttons.
+
+11. GAME DETAIL PAGE
+
+The detail page should feel like an editorial game profile combined with a useful technical reference.
+
+Top section
+
+Use a breadcrumb above the main title.
+
+Desktop:
+
+- Left: title, release information, developer or publisher, platform labels, short description, and main actions.
+- Right: large artwork or an image gallery if permitted assets exist.
+
+Keep the title visually dominant. Avoid placing multiple decorative cards around it.
+
+Primary action: "Check compatibility"
+
+Secondary action: "Find similar games"
+
+Lower sections
+
+Use a clear vertical information hierarchy:
+
+1. About the game.
+2. Platforms and availability.
+3. System requirements.
+4. Compatibility checker.
+5. Similar games.
+6. Sources and data freshness.
+
+Requirements should be presented in readable rows or a comparison table, with minimum and recommended requirements clearly separated.
+
+If requirements are unavailable, explain that they have not been verified. Do not invent a generic minimum specification.
+
+On mobile, stack artwork, title, actions, and technical details in a natural reading order.
+
+12. COMPATIBILITY PAGE
+
+The compatibility tool should look like a practical technical utility.
+
+Avoid a dashboard full of gauges, circular meters, and glowing status cards.
+
+Initial screen
+
+Display:
+
+- Page title.
+- A concise explanation of the comparison.
+- Platform selector: PC, Android, iOS.
+- Game selector or search field.
+
+PC workflow
+
+Organize hardware inputs into a clear form:
+
+- Operating system.
+- CPU.
+- GPU.
+- RAM.
+- Available storage when relevant.
+- Optional resolution.
+
+Use autocomplete only when backed by a real hardware catalog. If no catalog is available, allow manual entry and clearly explain that exact hardware matching may be limited.
+
+Make required fields obvious. Validate input without resetting the form.
+
+Results screen
+
+Present:
+
+- A clear overall status.
+- A short explanation.
+- A comparison table showing user hardware, published requirements, and comparison result.
+- Missing or ambiguous fields.
+- Source and verification date.
+- A list of suitable alternatives, if supported by data.
+
+Do not use a percentage meter unless the value has a defensible calculation and a clear meaning.
+
+Do not claim that a game will run smoothly when the system merely meets its minimum requirements.
+
+Mobile workflow
+
+Ask for platform and device model first. Let users enter additional hardware information if needed.
+
+Distinguish official platform availability from device-specific performance or compatibility.
+
+Use the same clear result language across all platforms, while respecting their different compatibility data.
+
+13. ALTERNATIVES PAGE
+
+When users ask for games like a selected title, show a comparison that helps them make a decision.
+
+Each alternative should include:
+
+- Artwork.
+- Title.
+- Shared gameplay or genre characteristics.
+- Supported platform.
+- Compatibility status, when known.
+- A short explanation of why it is recommended.
+
+When device data is available, rank candidates using separate similarity and compatibility scores.
+
+Use missing data as uncertainty, not as a favorable score.
+
+If the user has not provided device information, explain that the list is based on similarity alone.
+
+Do not use unsupported phrases such as "runs perfectly on your PC."
+
+14. ANIMATION AND INTERACTION
+
+Use motion sparingly and only to explain a state change.
+
+Allowed motion
+
+- Button hover and pressed states: approximately 120–180 ms.
+- Dropdown opening: approximately 120–180 ms.
+- Filter drawer: approximately 180–240 ms.
+- Small card image scale on hover: at most a subtle 1.01–1.02 scale.
+- Focus transitions: approximately 120–160 ms.
+- Minimal opacity transitions for content appearing after a real asynchronous operation.
+
+Use simple easing curves. Avoid dramatic spring motion, excessive bounce, and overshooting.
+
+Avoid
+
+- Constant floating elements.
+- Animated background gradients.
+- Parallax on every image.
+- Scroll-triggered entrances for every component.
+- Auto-playing video with sound.
+- Infinite decorative animations.
+- Cursor-following effects.
+- Fake progress animations.
+- Animations that delay access to content.
+
+Respect "prefers-reduced-motion". Ensure the interface remains complete and usable when animation is disabled.
+
+15. RESPONSIVE DESIGN
+
+Test the layout at representative viewport widths:
+
+- 360 px.
+- 390 px.
+- 768 px.
+- 1024 px.
+- 1280 px.
+- 1440 px.
+
+Do not simply shrink the desktop layout.
+
+At mobile widths:
+
+- Collapse navigation appropriately.
+- Use two-column game grids where readable.
+- Move filters into a drawer.
+- Stack game detail content.
+- Keep technical tables readable through responsive rows or controlled horizontal scrolling.
+- Keep primary actions visible and appropriately sized.
+- Avoid text clipping and horizontal page overflow.
+
+At tablet widths, avoid awkward intermediate states where the sidebar and game cards become too narrow.
+
+16. ACCESSIBILITY
+
+Implement semantic HTML, keyboard navigation, visible focus states, accessible input labels, and appropriate contrast.
+
+Use correct roles for dialogs and menus. Return focus appropriately when a modal or drawer closes.
+
+Ensure search suggestions can be navigated using a keyboard.
+
+Do not rely on hover alone to reveal essential information.
+
+Use descriptive alternative text for meaningful images and empty alternative text for decorative images.
+
+Ensure compatibility states include descriptive text in addition to color.
+
+17. ENGINEERING REQUIREMENTS
+
+Keep the interface visually consistent and the codebase maintainable.
+
+Separate:
+
+- UI components.
+- Game catalog data.
+- Search parsing and ranking.
+- Filter logic.
+- Compatibility calculations.
+- Recommendation scoring.
+- API and data-access logic.
+- Source attribution.
+- Configuration.
+
+Use TypeScript types for game records, platforms, hardware profiles, requirements, benchmarks, filters, and recommendation results.
+
+Use shared components where they solve repeated interface needs, but do not turn every small element into a separate abstraction.
+
+Avoid oversized components, duplicated search logic, deeply nested conditional rendering, and excessive dependencies.
+
+Keep environment variables and secret credentials out of browser-exposed code.
+
+Start with local structured data. External APIs and a database can be added when the workflows are reliable.
+
+Do not pretend that a local dataset is live API data.
+
+18. CONTENT AND DATA INTEGRITY
+
+Never invent:
+
+- Game ratings.
+- Review counts.
+- Player counts.
+- Compatibility scores without a defined method.
+- FPS measurements.
+- Hardware requirements.
+- Release dates.
+- Publisher information.
+- Platform availability.
+- Data source claims.
+
+If an item is unknown, omit it or label it as unknown.
+
+Show a source or verification date for important technical claims where available.
+
+Use only authorized artwork and data sources. Respect licensing, attribution, caching, and commercial-use restrictions.
+
+19. IMPLEMENTATION WORKFLOW
+
+Before coding:
+
+1. Inspect the existing repository.
+2. Identify its framework and current functionality.
+3. Explain the visual direction and component architecture briefly.
+4. Define the color, spacing, typography, and layout tokens.
+
+Then:
+
+1. Implement the header and homepage hero.
+2. Inspect the actual result at desktop and mobile widths.
+3. Correct visual issues before expanding.
+4. Build the catalog, shared search, and filters.
+5. Build the game detail pages.
+6. Implement the compatibility workflow.
+7. Implement discovery and alternatives.
+8. Finish responsive behavior, accessibility, error states, and documentation.
+
+Do not generate every page in one unreviewed pass. Keep the application runnable after each milestone.
+
+20. FINAL QUALITY STANDARD
+
+Before declaring the website complete, check:
+
+- Visual hierarchy and consistent alignment.
+- Typography and line lengths.
+- Actual search ranking.
+- Combined filter behavior.
+- Correct URL state restoration.
+- Working navigation and forms.
+- Real compatibility calculations.
+- Honest handling of missing data.
+- Correct recommendation explanations.
+- Mobile overflow and wrapping.
+- Keyboard navigation and focus.
+- Contrast and reduced-motion support.
+- Console errors and broken routes.
+- Asset loading and image licensing.
+- Exposed credentials and unnecessary dependencies.
+
+Fix the issues you observe.
+
+Do not claim to have tested functionality you did not test.
+
+The final product should feel like a carefully designed, independently branded gaming publication with a serious technical tool at its core. Every layout decision, color, interaction, and content element must serve GameFit's actual users.
+
+Begin by inspecting the project and implementing the homepage header and hero as the first representative section. Do not move on to the entire site until that section has been checked at desktop and mobile widths.
